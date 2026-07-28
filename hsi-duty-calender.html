@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSI Duty Swap Calendar — Jennifer Chen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Case-study-specific layout, kept separate so styles.css stays reusable */
+  .cs-header { max-width: var(--max-w); margin: 0 auto; padding: 96px var(--side-pad) 24px; }
+  .cs-back { font-size: 14px; color: var(--ink-soft); text-decoration: none; }
+  .cs-back:hover { color: var(--ink); }
+  .cs-title { font-family: var(--serif); font-weight: 600; font-size: clamp(32px, 5vw, 52px); margin: 24px 0 16px; }
+  .cs-meta { display: flex; gap: 32px; flex-wrap: wrap; font-size: 14px; color: var(--ink-soft); margin-bottom: 8px; }
+  .cs-meta div span { display: block; color: var(--ink); font-weight: 600; font-size: 15px; margin-top: 2px; }
+  .cs-hero-image {
+    max-width: var(--max-w); margin: 32px auto 0; padding: 0 var(--side-pad);
+  }
+  .cs-hero-image img {
+    width: 100%; display: block; border-radius: 12px;
+  }
+  .cs-hero-image .placeholder {
+    aspect-ratio: 16/10; background: var(--line); border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink-soft); font-size: 14px;
+  }
+  .cs-hero-note {
+    max-width: var(--max-w); margin: 12px auto 0; padding: 0 var(--side-pad);
+    font-style: italic; font-size: 14px; color: var(--ink-soft);
+  }
+  .cs-section-image {
+    width: 100%; display: block; border-radius: 12px; margin: 8px 0 20px;
+  }
+  .cs-photo-stack {
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .cs-photo-stack .cs-section-image {
+    margin: 0;
+  }
+  .cs-section-images {
+    display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start;
+  }
+  .cs-section-images img {
+    border-radius: 12px; display: block;
+  }
+  .cs-section-images .cs-img-wide { flex: 2 1 420px; width: 100%; max-width: 560px; }
+  .cs-section-images .cs-img-narrow { flex: 1 1 200px; width: 100%; max-width: 260px; }
+  .cs-section { max-width: var(--max-w); margin: 0 auto; padding: 56px var(--side-pad); border-top: none; }
+  .cs-section h2 { font-family: var(--serif); font-weight: 700; font-size: 20px; color: var(--ink); margin: 0 0 16px; }
+  .cs-section p { font-size: 17px; color: var(--ink-soft); margin: 0 0 20px; }
+  .cs-section p:last-child { margin-bottom: 0; }
+  .cs-section h3 { font-family: var(--serif); font-weight: 700; font-size: 16px; color: var(--ink); margin: 24px 0 12px; }
+  .cs-section h3:first-of-type { margin-top: 0; }
+  .cs-section ul { margin: 0 0 20px; padding-left: 20px; }
+  .cs-section ul:last-child { margin-bottom: 0; }
+  .cs-section ul li { font-size: 17px; color: var(--ink-soft); margin-bottom: 10px; }
+  .cs-section ul li:last-child { margin-bottom: 0; }
+  .cs-impact-stats { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 8px; }
+  .cs-impact-stats div { font-family: var(--serif); font-size: 32px; color: var(--accent); flex: 1 1 180px; max-width: 220px; }
+  .cs-impact-stats div span { display: block; font-family: var(--sans); font-size: 13px; line-height: 1.5; color: var(--ink-soft); margin-top: 6px; }
+  .cs-metrics-note { font-style: italic; font-size: 13px; color: var(--ink-soft); margin: -8px 0 20px; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">
+      <img src="images/logo-light.png" alt="Jennifer Chen" class="logo-img logo-img-light">
+      <img src="images/logo-dark.png" alt="Jennifer Chen" class="logo-img logo-img-dark">
+    </a>
+  <nav>
+    <a href="index.html#work">UX Work</a>
+    <a href="ai.html">AI</a>
+    <a href="about.html">About</a>
+    <a href="index.html#contact">Contact</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <span class="icon-sun">☀</span>
+      <span class="icon-moon">☾</span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <section class="cs-header">
+    <a href="index.html#work" class="cs-back">← Back to work</a>
+    <h1 class="cs-title">HSI Duty Swap Calendar</h1>
+    <div class="cs-meta">
+      <div>Role<span>UX UI Designer</span></div>
+      <div>Company<span>DHS Homeland Security Investigations</span></div>
+      <div>Timeline<span>&lt; 1 year, 2025</span></div>
+    </div>
+  </section>
+
+  <div class="cs-hero-image">
+    <img src="images/case-study-2-b.png" alt="HSI Duty Swap Calendar — duty swap calendar detail">
+  </div>
+
+  <p class="cs-hero-note">Due to the confidential nature of this project, the screens shown are recreated in Figma to represent the original designs while protecting sensitive information.</p>
+
+  <section class="cs-section">
+    <h2>Overview</h2>
+    <p>The HSI Duty Swap Calendar modernized how federal agents request, approve, and manage
+    shift swaps. By replacing manual email chains and paper-based scheduling with a centralized
+    digital workflow, the solution improved transparency, reduced administrative overhead, and
+    gave supervisors better oversight of staffing coverage.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>The Problem</h2>
+    <p>Agents relied on emails, phone calls, and paper calendars to coordinate duty swaps,
+    creating scheduling conflicts, limited visibility, and compliance risks. Research showed
+    that 68% of agents experienced scheduling conflicts within a 90-day period, while
+    supervisors spent over 5 hours each week managing requests manually.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>Constraints</h2>
+    <p>The solution needed to support existing federal compliance requirements, complex
+    approval workflows, and legacy scheduling processes while remaining intuitive for agents
+    and supervisors. Designs were continuously refined through close collaboration with
+    developers, product managers, and business analysts to ensure technical feasibility and
+    timely delivery.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>Process</h2>
+    <p>I followed the Double Diamond framework, starting with field observations, stakeholder
+    interviews, surveys, and workflow analysis to understand scheduling challenges. Research
+    informed personas, user journeys, wireframes, and iterative prototypes, which were refined
+    through A/B testing, remote moderated testing, task scenario testing, and first-click
+    testing with federal agents. Continuous feedback validated the ease of multitasking and
+    scheduling, while design iterations led to a 45% reduction in submission errors before
+    launch.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>Solution</h2>
+    <ul>
+      <li><strong>Digital Duty Calendar</strong> — Centralized scheduling, shift swaps, and approvals into one collaborative calendar.</li>
+      <li><strong>Guided Swap Workflow</strong> — Simplified requesting, approving, and tracking schedule changes with clear status updates.</li>
+      <li><strong>Supervisor Oversight</strong> — Added filtering, scheduling views, and approval tools to improve staffing visibility and compliance.</li>
+      <li><strong>Reusable Components</strong> — Leveraged the product design system to deliver an accessible, consistent experience across desktop and mobile.</li>
+    </ul>
+    <div class="cs-photo-stack">
+      <img src="images/case-study-2-d.png" alt="GovSchedule mobile app — duty roster" class="cs-section-image">
+      <img src="images/case-study-2-c.png" alt="Government Portal — Audit History Log" class="cs-section-image">
+    </div>
+  </section>
+
+  <div class="cs-hero-image">
+    <img src="images/case-study-2.png" alt="HSI Duty Swap Calendar">
+  </div>
+
+  <section class="cs-section">
+    <h2>Impact</h2>
+    <p class="cs-metrics-note">*Portfolio metrics represent usability testing and project outcomes used to communicate the impact of the design solution.</p>
+    <div class="cs-impact-stats">
+      <div>94%<span>Task success rate during usability testing</span></div>
+      <div>90/100<span>System Usability Scale (SUS)</span></div>
+      <div>43%<span>Faster completion of common scheduling tasks</span></div>
+      <div>5+<span>Hours of manual scheduling work reduced per supervisor each week</span></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <h2>About RAVEN</h2>
+    <p>RAVEN (Real-time Analytical Violence Enforcement Network) is an advanced tool used by
+    Homeland Security Investigations (HSI) to help law enforcement agencies track, update,
+    monitor, and increase operational awareness of criminal activities both locally and
+    internationally.</p>
+    <p>The goal of RAVEN is to enhance national security through proactive intelligence
+    gathering and coordinated enforcement. It enables HSI and partner agencies to stay ahead of
+    criminal networks by making critical information:</p>
+    <ul>
+      <li>Timely</li>
+      <li>Actionable</li>
+      <li>Cross-functional</li>
+    </ul>
+    <p>By improving data visibility and connecting field agents with decision-makers, RAVEN
+    plays a pivotal role in modern law enforcement and counterterrorism operations.</p>
+    <div class="cs-photo-stack">
+      <img src="images/case-study-2-f.webp" alt="RAVEN — file upload and submission modals" class="cs-section-image">
+      <img src="images/case-study-2-g.webp" alt="RAVEN — shift swap request and personnel profile cards" class="cs-section-image">
+      <img src="images/case-study-2-h.webp" alt="RAVEN — design system component library documentation" class="cs-section-image">
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <h2>RAVEN Design System</h2>
+    <h3>Role</h3>
+    <p>Design System Iconographer/Contributor<br>
+    Maintained the icon library and design system documentation to ensure consistency across
+    products.</p>
+    <h3>Contributions</h3>
+    <ul>
+      <li>Managed the icon library and usage guidelines.</li>
+      <li>Standardized icon styles, naming, and accessibility.</li>
+      <li>Partnered with designers and developers to maintain consistency.</li>
+    </ul>
+    <h3>Takeaway</h3>
+    <p>Contributing to the design system reinforced the value of consistency, documentation,
+    and cross-functional collaboration in building scalable products.</p>
+  </section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <p>Interested in working together?</p>
+  <a class="contact-link" href="https://www.linkedin.com/in/jennjchen" target="_blank" rel="noopener">Let's connect on LinkedIn →</a>
+  <p class="copyright">&copy; 2026 Jennifer Chen</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EAGLE (EOP) — Jennifer Chen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Case-study-specific layout, kept separate so styles.css stays reusable */
+  .cs-header { max-width: var(--max-w); margin: 0 auto; padding: 96px var(--side-pad) 24px; }
+  .cs-back { font-size: 14px; color: var(--ink-soft); text-decoration: none; }
+  .cs-back:hover { color: var(--ink); }
+  .cs-title { font-family: var(--serif); font-weight: 600; font-size: clamp(32px, 5vw, 52px); margin: 24px 0 4px; }
+  .cs-subtitle { font-size: 17px; color: var(--ink-soft); margin: 0 0 24px; }
+  .cs-meta { display: flex; gap: 32px; flex-wrap: wrap; font-size: 14px; color: var(--ink-soft); margin-bottom: 8px; }
+  .cs-meta div span { display: block; color: var(--ink); font-weight: 600; font-size: 15px; margin-top: 2px; }
+  .cs-hero-image {
+    max-width: var(--max-w); margin: 32px auto 0; padding: 0 var(--side-pad);
+  }
+  .cs-hero-image img {
+    width: 100%; display: block; border-radius: 12px;
+  }
+  .cs-hero-image .placeholder {
+    aspect-ratio: 16/10; background: var(--line); border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink-soft); font-size: 14px;
+  }
+  .cs-inline-image {
+    max-width: var(--max-w); margin: 0 auto; padding: 0 var(--side-pad);
+  }
+  .cs-inline-image img {
+    width: 100%; display: block; border-radius: 12px;
+  }
+  .cs-section-image {
+    width: 100%; display: block; border-radius: 12px; margin: 8px 0 20px;
+  }
+  .cs-ds-link {
+    display: inline-block; margin-top: 8px;
+    font-size: 19px; font-weight: 700; text-decoration: underline;
+    color: var(--accent);
+  }
+  .cs-hero-note {
+    max-width: var(--max-w); margin: 12px auto 0; padding: 0 var(--side-pad);
+    font-style: italic; font-size: 14px; color: var(--ink-soft);
+  }
+  .cs-section { max-width: var(--max-w); margin: 0 auto; padding: 56px var(--side-pad); border-top: none; }
+  .cs-section h2 { font-family: var(--serif); font-weight: 700; font-size: 20px; color: var(--ink); margin: 0 0 16px; }
+  .cs-section p { font-size: 17px; color: var(--ink-soft); margin: 0 0 20px; }
+  .cs-section p:last-child { margin-bottom: 0; }
+  .cs-section h3 { font-family: var(--serif); font-weight: 700; font-size: 16px; color: var(--ink); margin: 24px 0 12px; }
+  .cs-section h3:first-child { margin-top: 0; }
+  .cs-section ul { margin: 0 0 20px; padding-left: 20px; }
+  .cs-section ul:last-child { margin-bottom: 0; }
+  .cs-section ul li { font-size: 17px; color: var(--ink-soft); margin-bottom: 10px; }
+  .cs-section ul li:last-child { margin-bottom: 0; }
+  .cs-impact-stats { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 8px; }
+  .cs-impact-stats div { font-family: var(--serif); font-size: 32px; color: var(--accent); flex: 1 1 180px; max-width: 220px; }
+  .cs-impact-stats div span { display: block; font-family: var(--sans); font-size: 13px; line-height: 1.5; color: var(--ink-soft); margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">
+      <img src="images/logo-light.png" alt="Jennifer Chen" class="logo-img logo-img-light">
+      <img src="images/logo-dark.png" alt="Jennifer Chen" class="logo-img logo-img-dark">
+    </a>
+  <nav>
+    <a href="index.html#work">UX Work</a>
+    <a href="ai.html">AI</a>
+    <a href="about.html">About</a>
+    <a href="index.html#contact">Contact</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <span class="icon-sun">☀</span>
+      <span class="icon-moon">☾</span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <section class="cs-header">
+    <a href="index.html#work" class="cs-back">← Back to work</a>
+    <h1 class="cs-title">EAGLE (EOP)</h1>
+    <p class="cs-subtitle">Human Resources Information Database Systems</p>
+    <div class="cs-meta">
+      <div>Role<span>UX and UI Designer</span></div>
+      <div>Company<span>Executive Office of the President</span></div>
+      <div>Timeline<span>7 months, 2026</span></div>
+    </div>
+  </section>
+
+  <div class="cs-hero-image">
+    <img src="images/case-study-1.png" alt="EAGLE (EOP)">
+  </div>
+
+  <p class="cs-hero-note">Due to the confidential nature of this project, the screens shown are recreated in Figma to represent the original designs while protecting sensitive information.</p>
+
+  <section class="cs-section">
+    <h2>Overview</h2>
+    <p>EAGLE is an enterprise HR Case &amp; Information System that streamlines the employee
+    lifecycle by centralizing HR cases, employee records, and role-based workflows into a
+    single platform. I redesigned complex HR processes into intuitive, scalable experiences,
+    reducing case processing time by half due to new usability practices.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>The Problem</h2>
+    <p>HR operations lacked the visibility and accountability needed to manage employee cases
+    efficiently. Background investigations often took over a month for routine approvals,
+    case ownership was unclear, and third-party handoffs frequently stalled without visibility
+    into progress. This uncertainty impacted both HR specialists managing sensitive hiring
+    workflows and incoming employees waiting for security clearance, building access, and
+    system permissions. Improving the experience meant giving HR teams the transparency and
+    tools they needed to move employees into critical government roles with greater speed,
+    confidence, and accountability.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>Constraints</h2>
+    <p>The initial contract was scoped for six months but was extended as development
+    timelines shifted. To meet MVP deadlines, the team narrowed its focus to the core HR
+    approval workflows, ensuring each step of the employee lifecycle was accurately mapped
+    before expanding functionality. Existing technical debt and incomplete backend
+    dependencies limited what could be built, so we prioritized clear user flows, scalable
+    designs, and experiences that could support future phases without requiring major
+    redesigns.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>Process</h2>
+    <h3>User Research</h3>
+    <p>Methods</p>
+    <ul>
+      <li><strong>Field Observations</strong> — Observed HR specialists managing onboarding, transfers, and separation cases to understand existing workflows and pain points.</li>
+      <li><strong>Stakeholder Interviews</strong> — Reviewed research conducted by business analysts and UX researchers, then met with HR stakeholders to validate priorities and identify gaps in the existing Human Capital Management System.</li>
+      <li><strong>Contextual Inquiries</strong> — Worked alongside HR personnel to understand how cases were managed in real-world scenarios and where bottlenecks occurred.</li>
+      <li><strong>User Interviews</strong> — Conducted recurring feedback sessions throughout the design process to validate concepts, refine functionality, and identify additional user needs.</li>
+      <li><strong>Analytics Review</strong> — Reviewed available workflow data and case metrics to identify inefficiencies and opportunities for process improvements.</li>
+      <li><strong>Competitive Analysis</strong> — Evaluated modern HR and database management platforms, such as ADP, to understand industry standards for reporting, KPIs, case management, and operational visibility.</li>
+      <li><strong>Usability Testing</strong> — Facilitated moderated one-hour sessions with HR specialists, supervisors, and managers to evaluate workflows, gather feedback, and iterate on designs before development.</li>
+    </ul>
+    <p>Participants</p>
+    <ul>
+      <li>HR Specialists</li>
+      <li>HR Supervisors</li>
+      <li>HR Managers</li>
+      <li>Business Analysts</li>
+      <li>UX Researchers</li>
+      <li>Developers</li>
+    </ul>
+    <h3>Define</h3>
+    <p>Research findings were synthesized using affinity mapping to identify recurring pain
+    points and prioritize opportunities. From there, I developed user personas, mapped
+    end-to-end user journeys, and defined what a successful experience should look like before
+    exploring solutions. A competitive analysis of enterprise HR platforms helped validate
+    design decisions and establish benchmarks for usability, efficiency, and workflow
+    management.</p>
+    <img src="images/case-study-1-c.png" alt="EAGLE (EOP) — case detail view" class="cs-section-image">
+    <h3>Develop</h3>
+    <p><strong>Ideation</strong><br>
+    Organized content through card sorting to establish a clear information hierarchy and intuitive navigation.</p>
+    <p><strong>Mid-Fidelity Wireframes</strong><br>
+    Translated research insights into wireframes to validate workflows, layouts, and interactions before visual design.</p>
+    <p><strong>Prototype Iterations</strong><br>
+    Rapidly tested and refined concepts through interactive prototypes based on stakeholder and user feedback.</p>
+    <p><strong>Developer Collaboration</strong><br>
+    Maintained continuous collaboration with developers to ensure technical feasibility and smooth implementation.</p>
+    <h3>Deliver</h3>
+    <p><strong>Design Handoff</strong><br>
+    Delivered detailed Figma specifications and annotations to support seamless development.</p>
+    <p><strong>MVP Launch</strong><br>
+    Shipped the MVP on time, translating the design blueprint into production while prioritizing core workflows and business-critical features.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>Solution</h2>
+    <ul>
+      <li><strong>Centralized Case Management</strong> — Unified employee records, cases, and activity into a single dashboard with filtering, search, and real-time status tracking.</li>
+      <li><strong>Guided HR Workflows</strong> — Designed end-to-end onboarding and offboarding experiences that standardized complex HR processes and reduced manual effort.</li>
+      <li><strong>Workload &amp; Task Management</strong> — Enabled managers to balance workloads, assign tasks, prioritize work, and monitor progress through visual indicators and custom task labels.</li>
+    </ul>
+    <a href="eagle-design-system.html" class="cs-ds-link">Explore the EAGLE Design System Case Study →</a>
+  </section>
+
+  <section class="cs-section">
+    <h2>Impact</h2>
+    <p>The redesigned HR workflows improved efficiency, usability, and task completion across
+    the employee lifecycle.</p>
+    <div class="cs-impact-stats">
+      <div>94%<span>Task success rate across key HR workflows</span></div>
+      <div>98<span>SUS (System Usability Scale) rating, indicating excellent usability</span></div>
+      <div>55%<span>Reduction in average time-on-task for common HR actions</span></div>
+      <div>65%<span>Faster employee offboarding, reducing completion time from &gt; 20 days to 7 days</span></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <p>Interested in working together?</p>
+  <a class="contact-link" href="https://www.linkedin.com/in/jennjchen" target="_blank" rel="noopener">Let's connect on LinkedIn →</a>
+  <p class="copyright">&copy; 2026 Jennifer Chen</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

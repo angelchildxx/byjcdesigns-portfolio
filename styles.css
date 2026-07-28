@@ -1,0 +1,504 @@
+/* ---------- Design tokens ---------- */
+:root {
+  --bg: #FAFAF7;
+  --ink: #1B1B18;
+  --ink-soft: #726C60;
+  --accent: #A8461D;
+  --line: #E4E1D8;
+  --pink: #C2185B;
+  --header-bg: rgba(250, 250, 247, 0.88);
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --max-w: 780px;
+  --side-pad: clamp(24px, 6vw, 64px);
+}
+
+/* ---------- Dark mode tokens ---------- */
+:root[data-theme="dark"] {
+  --bg: #15140F;
+  --ink: #EDEAE0;
+  --ink-soft: #9C978A;
+  --accent: #E38A4E;
+  --line: #322F26;
+  --pink: #F48FB1;
+  --header-bg: rgba(21, 20, 15, 0.88);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+a { color: inherit; }
+
+/* ---------- Header ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px var(--side-pad);
+  position: sticky;
+  top: 0;
+  background: var(--header-bg);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.4s ease;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+}
+
+/* ---------- Dark mode toggle ---------- */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-left: 24px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.3s ease, color 0.3s ease, transform 0.4s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: rotate(20deg);
+}
+
+.theme-toggle .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: inline; }
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  display: block;
+  height: 104px;
+  width: auto;
+}
+
+.logo-img-dark { display: none; }
+:root[data-theme="dark"] .logo-img-light { display: none; }
+:root[data-theme="dark"] .logo-img-dark { display: block; }
+
+.site-header nav a {
+  text-decoration: none;
+  margin-left: 28px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+  transition: color 0.2s ease;
+}
+
+.site-header nav a:hover { color: var(--ink); }
+
+/* ---------- Hero ---------- */
+.hero {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 96px var(--side-pad) 48px;
+}
+
+.hero-intro {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(28px, 4.5vw, 44px);
+  line-height: 1.28;
+  margin: 0;
+}
+
+.hero-intro strong { font-weight: 600; }
+
+.hero-line-indent {
+  display: block;
+  font-family: var(--sans);
+  font-weight: 400;
+  margin-top: 24px;
+  padding-left: 48px;
+  font-size: clamp(16px, 2.2vw, 20px);
+  line-height: 1.5;
+}
+
+.hero-line-indent strong { font-weight: 600; }
+
+/* ---------- Timeline ---------- */
+.timeline {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 32px var(--side-pad) 64px;
+  border-top: none;
+  border-bottom: none;
+}
+
+.timeline-list {
+  list-style: none;
+  margin: 32px 0 0;
+  padding: 0;
+}
+
+.timeline-list li {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  gap: 16px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 15px;
+}
+
+.timeline-list li:last-child { border-bottom: none; }
+
+.timeline-date {
+  color: var(--ink-soft);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.timeline-role { font-weight: 600; }
+
+.timeline-company {
+  color: var(--ink-soft);
+  text-align: right;
+}
+
+/* ---------- Bio ---------- */
+.bio {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 64px var(--side-pad);
+}
+
+.bio p {
+  font-size: 18px;
+  color: var(--ink-soft);
+  margin: 0 0 24px;
+}
+
+.bio p:last-child { margin-bottom: 0; }
+
+.bio strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- Work ---------- */
+.work {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 32px var(--side-pad) 80px;
+}
+
+.section-label {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin: 0 0 24px;
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  text-decoration: none;
+  padding: 28px 0;
+  border-bottom: none;
+  transition: padding-left 0.25s ease, color 0.25s ease;
+}
+
+.project-card:first-of-type { border-top: none; }
+
+.project-card:hover {
+  padding-left: 8px;
+  color: var(--accent);
+}
+
+.project-card-thumb {
+  flex-shrink: 0;
+  width: 120px;
+  height: 86px;
+  object-fit: cover;
+  border-radius: 12px;
+  filter: grayscale(55%) contrast(1.05) brightness(0.9);
+  transition: filter 0.5s ease;
+}
+
+:root[data-theme="dark"] .project-card-thumb {
+  filter: grayscale(70%) contrast(1.1) brightness(0.5);
+}
+
+.project-card:hover .project-card-thumb,
+:root[data-theme="dark"] .project-card:hover .project-card-thumb {
+  filter: none;
+}
+
+/* image-only card: no text, full-color, larger */
+.project-card--image,
+.project-card--image:first-of-type {
+  display: block;
+  padding: 0;
+  margin-bottom: 80px;
+  border-top: none;
+  border-bottom: none;
+}
+
+.project-card--image:last-of-type {
+  margin-bottom: 0;
+}
+
+.project-card--image:hover {
+  padding-left: 0;
+  color: inherit;
+}
+
+.project-card--image .project-card-thumb {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
+  filter: none;
+  transition: filter 0.3s ease;
+}
+
+:root[data-theme="dark"] .project-card--image .project-card-thumb {
+  filter: none;
+}
+
+.project-card--image:hover .project-card-thumb {
+  filter: brightness(0.7);
+}
+
+.project-card--image.project-card--dim .project-card-thumb {
+  filter: brightness(0.7);
+}
+
+.project-card--image.project-card--dim:hover .project-card-thumb {
+  filter: brightness(1);
+}
+
+.project-card h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 22px;
+  margin: 0 0 6px;
+}
+
+.project-card p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
+.project-card-arrow {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-left: auto;
+  transition: transform 0.25s ease;
+}
+
+.project-card:hover .project-card-arrow {
+  transform: translateX(4px);
+}
+
+/* ---------- Generic page sections (About, etc.) ---------- */
+.page-avatar-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 96px var(--side-pad) 8px;
+}
+
+.page-avatar {
+  width: 160px;
+  height: 160px;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: brightness(0.7);
+  transition: filter 0.3s ease;
+}
+
+.page-avatar:hover {
+  filter: brightness(1);
+}
+
+.page-photo {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 56px var(--side-pad) 96px;
+}
+
+.page-photo img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.page-section {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 56px var(--side-pad);
+  border-top: none;
+  transition: border-color 0.4s ease;
+}
+
+.page-section h2 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--ink);
+  margin: 0 0 16px;
+}
+
+.page-section p {
+  font-size: 17px;
+  color: var(--ink-soft);
+  margin: 0 0 20px;
+}
+
+.page-section p:last-child { margin-bottom: 0; }
+
+.page-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 10px 0;
+  font-size: 17px;
+}
+
+.page-list li span:first-child {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.page-list li span:last-child {
+  color: var(--ink-soft);
+}
+
+@media (max-width: 640px) {
+  .page-avatar {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* ---------- Contact / footer ---------- */
+.contact {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 80px var(--side-pad) 96px;
+  text-align: left;
+  border-top: none;
+}
+
+.contact p {
+  color: var(--ink-soft);
+  margin: 0 0 12px;
+  font-size: 15px;
+}
+
+.copyright {
+  margin-top: 50px;
+  font-size: 18px;
+  color: var(--ink);
+  text-align: left;
+}
+
+.contact-link {
+  display: inline-block;
+  font-family: var(--serif);
+  font-size: clamp(26px, 4vw, 36px);
+  text-decoration: none;
+  color: var(--ink);
+  margin-bottom: 32px;
+}
+
+.contact-link:hover { color: var(--accent); }
+
+.social-links a {
+  text-decoration: none;
+  color: var(--ink-soft);
+  font-size: 14px;
+  margin-right: 20px;
+}
+
+.social-links a:hover { color: var(--ink); }
+
+/* ---------- Theme-aware transitions ---------- */
+section,
+footer,
+.project-card,
+.contact-link,
+.social-links a,
+.timeline-list li,
+.cs-hero-image .placeholder,
+.cs-section {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* ---------- Theme toggle "activeness" pulse ---------- */
+/* Applied briefly via JS to every section when dark mode is switched,
+   so the hue change reads as an active, deliberate transition rather
+   than an abrupt flash. */
+.theme-fade {
+  transition: opacity 0.3s ease !important;
+  opacity: 0.4;
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .timeline-list li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    padding: 16px 0;
+  }
+  .timeline-company { text-align: left; }
+  .site-header nav a { margin-left: 16px; }
+  .project-card-thumb {
+    width: 72px;
+    height: 52px;
+  }
+}

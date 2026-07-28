@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EAGLE Design System — Jennifer Chen</title>
+<meta name="description" content="The EAGLE HR System design system — components, patterns, and accessibility standards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Case-study-specific layout, kept separate so styles.css stays reusable */
+  .cs-header { max-width: var(--max-w); margin: 0 auto; padding: 96px var(--side-pad) 24px; }
+  .cs-back { font-size: 14px; color: var(--ink-soft); text-decoration: none; }
+  .cs-back:hover { color: var(--ink); }
+  .cs-title { font-family: var(--serif); font-weight: 600; font-size: clamp(32px, 5vw, 52px); margin: 24px 0 4px; }
+  .cs-subtitle { font-size: 17px; color: var(--ink-soft); margin: 0 0 24px; }
+  .cs-meta { display: flex; gap: 32px; flex-wrap: wrap; font-size: 14px; color: var(--ink-soft); margin-bottom: 8px; }
+  .cs-meta div span { display: block; color: var(--ink); font-weight: 600; font-size: 15px; margin-top: 2px; }
+  .cs-hero-image {
+    max-width: var(--max-w); margin: 32px auto 0; padding: 0 var(--side-pad);
+  }
+  .cs-hero-inner {
+    position: relative;
+    display: block;
+    line-height: 0;
+  }
+  .cs-hero-image img {
+    width: 100%; display: block; border-radius: 12px;
+  }
+  .cs-hero-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0; transition: opacity 0.3s ease;
+    cursor: pointer;
+  }
+  .cs-hero-inner:hover .cs-hero-overlay {
+    opacity: 1;
+  }
+  .cs-hero-overlay span {
+    font-family: var(--serif); font-weight: 600; text-decoration: underline;
+    font-size: clamp(20px, 3vw, 32px); color: #FAFAF7; text-align: center; padding: 0 24px;
+    line-height: 1.3;
+  }
+  .cs-section { max-width: var(--max-w); margin: 0 auto; padding: 56px var(--side-pad); border-top: none; }
+  .cs-section h2 { font-family: var(--serif); font-weight: 700; font-size: 20px; color: var(--ink); margin: 0 0 16px; }
+  .cs-section p { font-size: 17px; color: var(--ink-soft); margin: 0 0 20px; }
+  .cs-section p:last-child { margin-bottom: 0; }
+  .cs-section h3 { font-family: var(--serif); font-weight: 700; font-size: 16px; color: var(--ink); margin: 0 0 12px; }
+  .cs-section ul { margin: 0 0 20px; padding-left: 20px; }
+  .cs-section ul:last-child { margin-bottom: 0; }
+  .cs-section ul li { font-size: 17px; color: var(--ink-soft); margin-bottom: 10px; }
+  .cs-section ul li:last-child { margin-bottom: 0; }
+  .cs-download-link {
+    display: inline-block; font-size: 17px; font-weight: 700;
+    color: var(--accent); text-decoration: underline; margin: 4px 0 8px;
+  }
+  .cs-password-note { font-size: 14px; color: var(--ink-soft); margin: 0; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">
+      <img src="images/logo-light.png" alt="Jennifer Chen" class="logo-img logo-img-light">
+      <img src="images/logo-dark.png" alt="Jennifer Chen" class="logo-img logo-img-dark">
+    </a>
+  <nav>
+    <a href="index.html#work">UX Work</a>
+    <a href="ai.html">AI</a>
+    <a href="about.html">About</a>
+    <a href="index.html#contact">Contact</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <span class="icon-sun">☀</span>
+      <span class="icon-moon">☾</span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <section class="cs-header">
+    <a href="eagle.html" class="cs-back">← Back to EAGLE (EOP)</a>
+    <h1 class="cs-title">EAGLE Design System</h1>
+    <div class="cs-meta">
+      <div>Role<span>Design System Owner</span></div>
+      <div>Tools<span>Figma and Material UI</span></div>
+      <div>Type<span>Federal WCAG 2.1 AA</span></div>
+    </div>
+  </section>
+
+  <div class="cs-hero-image">
+    <div class="cs-hero-inner">
+      <img src="images/design-system-hero.png" alt="EAGLE Design System — badges component documentation">
+      <div class="cs-hero-overlay"><span>EAGLE Human Resources Management System</span></div>
+    </div>
+  </div>
+
+  <section class="cs-section">
+    <h2>Role</h2>
+    <h3>Lead UI/UX Designer</h3>
+    <p>Led the creation, evolution, and documentation of the product's design system from
+    start to finish.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>Design System Walkthrough</h2>
+    <p>Explore the design system, component library, and documentation.</p>
+    <a href="https://shorturl.at/o5CYO" class="cs-download-link" target="_blank" rel="noopener">View Design System Walkthrough (PDF)</a>
+    <p class="cs-password-note">Password: uxpresent2026</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>Takeaway</h2>
+    <p>The design system became the team's go-to reference for building consistent
+    experiences. It helped designers and developers stay aligned, speed up implementation, and
+    make future features easier to build.</p>
+  </section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <p>Interested in working together?</p>
+  <a class="contact-link" href="https://www.linkedin.com/in/jennjchen" target="_blank" rel="noopener">Let's connect on LinkedIn →</a>
+  <p class="copyright">&copy; 2026 Jennifer Chen</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

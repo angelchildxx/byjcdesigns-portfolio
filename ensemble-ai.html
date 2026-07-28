@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ensemble.ai — Jennifer Chen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Case-study-specific layout, kept separate so styles.css stays reusable */
+  .cs-header { max-width: 100%; margin: 0; padding: 96px var(--side-pad) 24px; }
+  .cs-back { font-size: 14px; color: var(--ink-soft); text-decoration: none; }
+  .cs-back:hover { color: var(--ink); }
+  .cs-title { font-family: var(--serif); font-weight: 600; font-size: clamp(32px, 5vw, 52px); margin: 24px 0 16px; }
+  .cs-meta { display: flex; gap: 32px; flex-wrap: wrap; font-size: 14px; color: var(--ink-soft); margin-bottom: 8px; }
+  .cs-meta div span { display: block; color: var(--ink); font-weight: 600; font-size: 15px; margin-top: 2px; }
+  .cs-meta-indent { display: block; }
+  .cs-hero-image {
+    max-width: var(--max-w); margin: 32px auto 0; padding: 0 var(--side-pad);
+  }
+  .cs-hero-image img {
+    width: 100%; display: block; border-radius: 12px;
+  }
+  .cs-hero-image .placeholder {
+    aspect-ratio: 16/10; background: var(--line); border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink-soft); font-size: 14px;
+  }
+  .cs-hero-row {
+    display: flex; width: 100%; margin: 32px 0 0; gap: 0;
+  }
+  .cs-hero-row img {
+    flex: 1 1 0; width: 0; min-width: 0; height: auto;
+    object-fit: cover; display: block;
+  }
+  @media (max-width: 640px) {
+    .cs-hero-row { flex-direction: column; }
+    .cs-hero-row img { width: 100%; }
+  }
+  .cs-gallery {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+    padding: 32px var(--side-pad) 0; margin: 0;
+  }
+  .cs-gallery img {
+    width: 100%; display: block; border-radius: 12px;
+  }
+  @media (max-width: 640px) {
+    .cs-gallery { grid-template-columns: 1fr; }
+  }
+  .cs-section { max-width: 100%; margin: 0; padding: 56px var(--side-pad); border-top: none; }
+  .cs-section h2 { font-family: var(--serif); font-weight: 700; font-size: 20px; color: var(--ink); margin: 0 0 16px; }
+  .cs-section p { font-size: 17px; color: var(--ink-soft); margin: 0 0 20px; }
+  .cs-section p:last-child { margin-bottom: 0; }
+  .cs-section ul { margin: 0 0 20px; padding-left: 20px; }
+  .cs-section ul:last-child { margin-bottom: 0; }
+  .cs-section ul li { font-size: 17px; color: var(--ink-soft); margin-bottom: 10px; }
+  .cs-section ul li:last-child { margin-bottom: 0; }
+  .cs-principles {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 8px;
+  }
+  .cs-principles h3 { font-family: var(--serif); font-weight: 700; font-size: 16px; color: var(--ink); margin: 0 0 8px; }
+  .cs-principles p { font-size: 15px; color: var(--ink-soft); margin: 0; }
+  @media (max-width: 640px) {
+    .cs-principles { grid-template-columns: 1fr; }
+  }
+  .cs-impact-stats { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 8px; }
+  .cs-impact-stats div { font-family: var(--serif); font-size: 32px; color: var(--accent); flex: 1 1 180px; max-width: 220px; }
+  .cs-impact-stats div span { display: block; font-family: var(--sans); font-size: 13px; line-height: 1.5; color: var(--ink-soft); margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">
+      <img src="images/logo-light.png" alt="Jennifer Chen" class="logo-img logo-img-light">
+      <img src="images/logo-dark.png" alt="Jennifer Chen" class="logo-img logo-img-dark">
+    </a>
+  <nav>
+    <a href="index.html#work">UX Work</a>
+    <a href="ai.html">AI</a>
+    <a href="about.html">About</a>
+    <a href="index.html#contact">Contact</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <span class="icon-sun">☀</span>
+      <span class="icon-moon">☾</span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <section class="cs-header">
+    <a href="ai.html" class="cs-back">← Back to AI work</a>
+    <h1 class="cs-title">Ensemble.ai</h1>
+    <div class="cs-meta">
+      <div>Role<span>Creative Director / Art Direction<span class="cs-meta-indent">and Lead AI Engineer / Designer</span></span></div>
+      <div>Industry<span>Fashion Design and Marketing</span></div>
+      <div>Timeline<span>&lt; 6 months, 2025</span></div>
+    </div>
+  </section>
+
+  <div class="cs-gallery">
+    <img src="images/case-study-5-e1.png" alt="Ensemble.ai — design detail 1">
+    <img src="images/case-study-5-e2.png" alt="Ensemble.ai — design detail 2">
+    <img src="images/case-study-5-e3.png" alt="Ensemble.ai — design detail 3">
+    <img src="images/case-study-5-e4.png" alt="Ensemble.ai — design detail 4">
+    <img src="images/case-study-5-e5.png" alt="Ensemble.ai — design detail 5">
+    <img src="images/case-study-5-e6.png" alt="Ensemble.ai — design detail 6">
+  </div>
+
+  <section class="cs-section">
+    <h2>Overview</h2>
+    <p>Ensemble.ai is a conceptual AI fashion startup exploring the future of sustainable
+    couture, generative design, and personalized luxury fashion. The project imagines a world
+    where anyone can describe a garment in natural language and instantly generate a
+    photorealistic 3D design, ready for customization, production, and purchase. Designed for
+    fashion enthusiasts, designers, stylists, and luxury brands, Ensemble.ai combines AI,
+    sustainable materials, and inclusive design to challenge today's fast-fashion industry
+    while reimagining how clothing is created.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>The Problem</h2>
+    <p>Fashion has become increasingly driven by mass production and rapidly changing trends.
+    As global retailers compete to produce clothing faster and cheaper, originality is often
+    replaced with repetition, contributing to environmental waste and a loss of creative
+    identity.</p>
+    <p>Research consistently points to several challenges shaping the industry today:</p>
+    <ul>
+      <li>Fast fashion contributes significantly to textile waste, with millions of tons of clothing ending up in landfills each year.</li>
+      <li>Trend cycles have become shorter, encouraging overconsumption and disposable clothing.</li>
+      <li>Fashion campaigns and magazines often feature similar aesthetics, reducing representation of diverse body types, ages, ethnicities, and personal styles.</li>
+      <li>Independent designers face high production costs and lengthy design cycles before bringing a concept to life.</li>
+      <li>Consumers increasingly want sustainable products but struggle to find options that combine luxury, innovation, and environmental responsibility.</li>
+    </ul>
+    <p>The opportunity was to imagine how AI could make custom fashion more creative, inclusive, and sustainable without sacrificing craftsmanship or artistic expression.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>Constraints</h2>
+    <p>As an early-stage startup concept, several constraints shaped the project.</p>
+    <ul>
+      <li>Limited budget compared to traditional fashion houses.</li>
+      <li>AI-generated designs needed to feel editorial and believable rather than overly futuristic.</li>
+      <li>Sustainability remained a core business requirement, requiring concepts built around recycled textiles, ocean plastics, plant-based materials, and cruelty-free alternatives.</li>
+      <li>The platform needed to appeal to both professional designers and everyday consumers with no design experience.</li>
+      <li>The experience had to simplify an otherwise complex creative process while preserving user creativity.</li>
+    </ul>
+  </section>
+
+  <section class="cs-section">
+    <h2>Process</h2>
+    <p>The project began by studying trends across luxury fashion houses, fashion editorials,
+    runway collections, and emerging AI creative tools. I explored how AI could become a
+    creative collaborator rather than simply an image generator.</p>
+    <p>Research included:</p>
+    <ul>
+      <li>Competitive analysis of luxury fashion brands and digital fashion platforms.</li>
+      <li>Review of sustainability reports and circular fashion initiatives.</li>
+      <li>Analysis of runway trends and editorial photography.</li>
+      <li>Exploration of AI-assisted concept generation and rapid prototyping workflows.</li>
+    </ul>
+    <p>Through multiple rounds of experimentation, I refined prompts, silhouettes, material
+    textures, color palettes, lighting, and model diversity to create imagery that felt
+    cinematic, premium, and future-facing.</p>
+    <p>Rather than designing clothing around current trends, the creative direction focused on
+    timeless statement pieces inspired by architecture, nature, biomimicry, space exploration,
+    and sculptural forms.</p>
+    <p>A lightweight UX approach also informed how users would move from idea to finished
+    garment—simply describing their vision in plain language before reviewing AI-generated
+    concepts, customizing details, and previewing garments in interactive 3D.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>Solution</h2>
+    <p>Ensemble.ai reimagines fashion as an intelligent design platform rather than a
+    traditional clothing retailer.</p>
+    <p>Users begin by typing a prompt such as:<br>
+    "Design an elegant emerald evening gown inspired by northern lights using recycled ocean plastics with architectural pleats."</p>
+    <p>Within seconds, AI generates multiple high-fidelity concepts complete with realistic materials, construction details, and 3D visualizations.</p>
+    <p>The platform allows users to:</p>
+    <ul>
+      <li>Generate couture concepts from simple prompts.</li>
+      <li>Customize silhouettes, fabrics, colors, and embellishments.</li>
+      <li>Preview garments in photorealistic 3D.</li>
+      <li>Explore diverse AI-generated models across different ages, ethnicities, body types, and abilities.</li>
+      <li>Produce garments using sustainable recycled and cruelty-free materials.</li>
+    </ul>
+    <p>Instead of encouraging disposable fashion, Ensemble.ai promotes intentional design by
+    creating made-to-order pieces that reduce excess inventory and material waste.</p>
+    <p>The result is a platform where creativity becomes more accessible while sustainability remains central to every design decision.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>Design Principles</h2>
+    <p>The project was guided by four core principles:</p>
+    <div class="cs-principles">
+      <div>
+        <h3>Design Without Limits</h3>
+        <p>Creativity begins with imagination—not manufacturing constraints.</p>
+      </div>
+      <div>
+        <h3>Sustainability by Default</h3>
+        <p>Every garment is designed using environmentally conscious materials and produced only when needed.</p>
+      </div>
+      <div>
+        <h3>Representation Matters</h3>
+        <p>Fashion should celebrate individuality by reflecting diverse cultures, identities, body types, and personal styles.</p>
+      </div>
+      <div>
+        <h3>AI as a Creative Partner</h3>
+        <p>Artificial intelligence accelerates ideation while leaving artistic direction and storytelling in the hands of the designer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <h2>Business Impact (Concept)</h2>
+    <p>Although Ensemble.ai is a conceptual startup, the following metrics represent realistic business goals for an AI-powered fashion platform.</p>
+    <div class="cs-impact-stats">
+      <div>72%<span>Faster concept creation, reducing the time required to move from initial idea to production-ready design</span></div>
+      <div>58%<span>Reduction in physical prototyping, minimizing material waste through AI-generated digital sampling</span></div>
+      <div>45%<span>Increase in customer personalization, allowing users to co-create garments tailored to their preferences instead of purchasing mass-produced designs</span></div>
+      <div>35%<span>Reduction in projected material waste through made-to-order production and recycled materials</span></div>
+      <div>3×<span>More design concepts explored during the same creative timeline compared to traditional sketching workflows</span></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <h2>Outcome</h2>
+    <p>Ensemble.ai demonstrates how AI can reshape the future of luxury fashion by making
+    couture more creative, inclusive, and sustainable. The project highlights the intersection
+    of artificial intelligence, visual storytelling, environmental responsibility, and digital
+    product thinking while imagining a future where fashion is no longer defined by fast
+    trends, but by originality, craftsmanship, and conscious innovation.</p>
+  </section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <p>Interested in working together?</p>
+  <a class="contact-link" href="https://www.linkedin.com/in/jennjchen" target="_blank" rel="noopener">Let's connect on LinkedIn →</a>
+  <p class="copyright">&copy; 2026 Jennifer Chen</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

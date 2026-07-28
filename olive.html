@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olive — Jennifer Chen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Case-study-specific layout, kept separate so styles.css stays reusable */
+  .cs-header { max-width: var(--max-w); margin: 0 auto; padding: 96px var(--side-pad) 24px; }
+  .cs-back { font-size: 14px; color: var(--ink-soft); text-decoration: none; }
+  .cs-back:hover { color: var(--ink); }
+  .cs-title { font-family: var(--serif); font-weight: 600; font-size: clamp(32px, 5vw, 52px); margin: 24px 0 16px; }
+  .cs-meta { display: flex; gap: 32px; flex-wrap: wrap; font-size: 14px; color: var(--ink-soft); margin-bottom: 8px; }
+  .cs-meta div span { display: block; color: var(--ink); font-weight: 600; font-size: 15px; margin-top: 2px; }
+  .cs-hero-image {
+    max-width: var(--max-w); margin: 32px auto 0; padding: 0 var(--side-pad);
+  }
+  .cs-hero-image img {
+    width: 100%; display: block; border-radius: 12px;
+  }
+  .cs-hero-image .placeholder {
+    aspect-ratio: 16/10; background: var(--line); border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink-soft); font-size: 14px;
+  }
+  .cs-standalone-image {
+    max-width: var(--max-w); margin: 8px auto 20px; padding: 0 var(--side-pad);
+  }
+  .cs-standalone-image img {
+    width: 100%; display: block; border-radius: 12px;
+  }
+  .cs-clickable { cursor: zoom-in; }
+  .cs-lightbox {
+    position: fixed; inset: 0; z-index: 999;
+    background: rgba(0, 0, 0, 0.85);
+    display: none; align-items: center; justify-content: center;
+    padding: 40px; cursor: zoom-out;
+  }
+  .cs-lightbox.active { display: flex; }
+  .cs-lightbox img {
+    max-width: 100%; max-height: 100%; border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+  .cs-section { max-width: var(--max-w); margin: 0 auto; padding: 56px var(--side-pad); border-top: none; }
+  .cs-section h2 { font-family: var(--serif); font-weight: 700; font-size: 20px; color: var(--ink); margin: 0 0 16px; }
+  .cs-section p { font-size: 17px; color: var(--ink-soft); margin: 0 0 20px; }
+  .cs-section p:last-child { margin-bottom: 0; }
+  .cs-section ul { margin: 0 0 20px; padding-left: 20px; }
+  .cs-section ul:last-child { margin-bottom: 0; }
+  .cs-section ul li { font-size: 17px; color: var(--ink-soft); margin-bottom: 10px; }
+  .cs-section ul li:last-child { margin-bottom: 0; }
+  .cs-impact-stats { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 8px; }
+  .cs-impact-stats div { font-family: var(--serif); font-size: 32px; color: var(--accent); flex: 1 1 180px; max-width: 220px; }
+  .cs-impact-stats div span { display: block; font-family: var(--sans); font-size: 13px; line-height: 1.5; color: var(--ink-soft); margin-top: 6px; }
+  .cs-metrics-note { font-style: italic; font-size: 13px; color: var(--ink-soft); margin: -8px 0 20px; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">
+      <img src="images/logo-light.png" alt="Jennifer Chen" class="logo-img logo-img-light">
+      <img src="images/logo-dark.png" alt="Jennifer Chen" class="logo-img logo-img-dark">
+    </a>
+  <nav>
+    <a href="index.html#work">UX Work</a>
+    <a href="ai.html">AI</a>
+    <a href="about.html">About</a>
+    <a href="index.html#contact">Contact</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <span class="icon-sun">☀</span>
+      <span class="icon-moon">☾</span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <section class="cs-header">
+    <a href="index.html#work" class="cs-back">← Back to work</a>
+    <h1 class="cs-title">Olive</h1>
+    <div class="cs-meta">
+      <div>Role<span>UX UI Designer</span></div>
+      <div>Industry<span>Health and Wellness</span></div>
+      <div>Timeline<span>&lt; 4 months, 2024</span></div>
+    </div>
+  </section>
+
+  <div class="cs-hero-image">
+    <img src="images/case-study-3-hero.webp" alt="Olive app splash screen shown on a phone held in a hand">
+  </div>
+
+  <div class="cs-hero-image">
+    <img src="images/case-study-3.png" alt="Olive">
+  </div>
+
+  <section class="cs-section">
+    <h2>Overview</h2>
+    <p>Olive is a minimalist mental wellness app that helps users slow down, reflect, and
+    reconnect through daily mood tracking, guided breathing, and mindful self-reflection.
+    Designed with accessibility and emotional wellbeing at its core, the app creates a calm,
+    supportive experience that encourages users to build healthy emotional habits.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>The Problem</h2>
+    <p>Many people struggle to recognize and express their emotions, while existing mental
+    health apps often feel overwhelming or overly clinical. User research revealed a need for a
+    simple, approachable experience that helps users understand their emotions without adding
+    pressure or complexity.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>Constraints</h2>
+    <p>The challenge was to design a calming experience that balanced simplicity with
+    meaningful functionality. The app also needed to be accessible, inclusive, and supportive
+    of users with diverse cognitive, visual, and emotional needs.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>Process</h2>
+    <p>I conducted surveys, user interviews, card sorting, and affinity mapping to uncover user
+    needs and emotional patterns. Insights informed personas, user flows, and wireframes, which
+    were refined through A/B testing, preference testing, and usability testing using a Rainbow
+    Spreadsheet to identify behavioral trends and interaction friction.</p>
+  </section>
+
+  <div class="cs-standalone-image">
+    <img src="images/case-study-3-e.png" alt="Olive initial stakeholders' survey questions" class="cs-clickable">
+  </div>
+
+  <div class="cs-standalone-image">
+    <img src="images/case-study-3-c.png" alt="Olive user journey map — discover, onboard, daily check-in, reflection, habit building, and growth" class="cs-clickable">
+  </div>
+
+  <div class="cs-standalone-image">
+    <img src="images/case-study-3-d.png" alt="Olive competitor analysis snapshot — Headspace, Calm, Finch, and Olive comparison" class="cs-clickable">
+  </div>
+
+  <div class="cs-standalone-image">
+    <img src="images/case-study-3-b.png" alt="Olive app — emotion check-in, journaling, and reflection screens">
+  </div>
+
+  <section class="cs-section">
+    <h2>Solution</h2>
+    <ul>
+      <li><strong>Daily Mood Check-ins</strong> — Quickly log emotions to build self-awareness and identify emotional patterns over time.</li>
+      <li><strong>Guided Journaling</strong> — Reflect with thoughtful prompts that encourage users to document feelings and track their emotional wellbeing.</li>
+      <li><strong>Voice Affirmations</strong> — Record and replay personalized affirmations to foster self-compassion and positive habits.</li>
+      <li><strong>Mindful Breathing</strong> — Access guided breathing exercises designed to reduce stress and promote relaxation.</li>
+      <li><strong>Accessible, Calming Experience</strong> — A WCAG-compliant interface with intuitive navigation, soft visuals, and inclusive interactions that create a safe, welcoming environment.</li>
+    </ul>
+  </section>
+
+  <section class="cs-section">
+    <h2>Impact</h2>
+    <p class="cs-metrics-note">*Metrics represent prototype usability testing and design validation.</p>
+    <div class="cs-impact-stats">
+      <div>93%<span>Task success rate during usability testing</span></div>
+      <div>42%<span>Improvement in mood check-in completion</span></div>
+      <div>36%<span>Reduction in navigation friction</span></div>
+      <div>90/100<span>System Usability Scale (SUS)</span></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <p>Interested in working together?</p>
+  <a class="contact-link" href="https://www.linkedin.com/in/jennjchen" target="_blank" rel="noopener">Let's connect on LinkedIn →</a>
+  <p class="copyright">&copy; 2026 Jennifer Chen</p>
+</footer>
+
+<div class="cs-lightbox" id="cs-lightbox">
+  <img id="cs-lightbox-img" src="" alt="">
+</div>
+
+<script src="script.js"></script>
+<script>
+  (function () {
+    var lightbox = document.getElementById('cs-lightbox');
+    var lightboxImg = document.getElementById('cs-lightbox-img');
+    document.querySelectorAll('.cs-clickable').forEach(function (img) {
+      img.addEventListener('click', function () {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+      });
+    });
+    lightbox.addEventListener('click', function () {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    });
+  })();
+</script>
+</body>
+</html>

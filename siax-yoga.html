@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siax Yoga — Jennifer Chen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Case-study-specific layout, kept separate so styles.css stays reusable */
+  .cs-header { max-width: var(--max-w); margin: 0 auto; padding: 96px var(--side-pad) 24px; }
+  .cs-back { font-size: 14px; color: var(--ink-soft); text-decoration: none; }
+  .cs-back:hover { color: var(--ink); }
+  .cs-title { font-family: var(--serif); font-weight: 600; font-size: clamp(32px, 5vw, 52px); margin: 24px 0 16px; }
+  .cs-meta { display: flex; gap: 32px; flex-wrap: wrap; font-size: 14px; color: var(--ink-soft); margin-bottom: 8px; }
+  .cs-meta div span { display: block; color: var(--ink); font-weight: 600; font-size: 15px; margin-top: 2px; }
+  .cs-meta-indent { display: block; }
+  .cs-hero-image {
+    max-width: var(--max-w); margin: 32px auto 0; padding: 0 var(--side-pad);
+  }
+  .cs-hero-image img {
+    width: 100%; display: block; border-radius: 12px;
+  }
+  .cs-hero-image .placeholder {
+    aspect-ratio: 16/10; background: var(--line); border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink-soft); font-size: 14px;
+  }
+  .cs-gallery {
+    display: flex; flex-direction: column; gap: 64px;
+    max-width: var(--max-w); margin: 0 auto; padding: 0 var(--side-pad) 56px;
+  }
+  .cs-gallery img {
+    width: 100%; display: block; border-radius: 12px;
+  }
+  .cs-section { max-width: var(--max-w); margin: 0 auto; padding: 56px var(--side-pad); border-top: none; }
+  .cs-section h2 { font-family: var(--serif); font-weight: 700; font-size: 20px; color: var(--ink); margin: 0 0 16px; }
+  .cs-section p { font-size: 17px; color: var(--ink-soft); margin: 0 0 20px; }
+  .cs-section p:last-child { margin-bottom: 0; }
+  .cs-video-grid {
+    display: flex; flex-direction: column; gap: 24px; margin-top: 24px;
+  }
+  .cs-video-wrap {
+    position: relative; width: 100%;
+    padding-top: 56.25%; border-radius: 12px; overflow: hidden;
+  }
+  .cs-video-wrap iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+  }
+  .cs-impact-stats { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 8px; }
+  .cs-impact-stats div { font-family: var(--serif); font-size: 32px; color: var(--accent); flex: 1 1 180px; max-width: 220px; }
+  .cs-impact-stats div span { display: block; font-family: var(--sans); font-size: 13px; line-height: 1.5; color: var(--ink-soft); margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">
+      <img src="images/logo-light.png" alt="Jennifer Chen" class="logo-img logo-img-light">
+      <img src="images/logo-dark.png" alt="Jennifer Chen" class="logo-img logo-img-dark">
+    </a>
+  <nav>
+    <a href="index.html#work">UX Work</a>
+    <a href="ai.html">AI</a>
+    <a href="about.html">About</a>
+    <a href="index.html#contact">Contact</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <span class="icon-sun">☀</span>
+      <span class="icon-moon">☾</span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <section class="cs-header">
+    <a href="ai.html" class="cs-back">← Back to AI work</a>
+    <h1 class="cs-title">Siax Yoga</h1>
+    <div class="cs-meta">
+      <div>Role<span>Creative Director / Art Direction<span class="cs-meta-indent">and Lead AI Engineer</span></span></div>
+      <div>Industry<span>Health &amp; Wellness</span></div>
+      <div>Timeline<span>&lt; 6 months, 2025</span></div>
+    </div>
+  </section>
+
+  <div class="cs-hero-image">
+    <img src="images/case-study-6.png" alt="Siax Yoga">
+  </div>
+
+  <section class="cs-section">
+    <h2>Overview</h2>
+    <p>Siax Yoga (pronounced "see-ah") is a fictional luxury yoga and Pilates brand created to
+    explore how AI can be used to produce high-end marketing and advertising content for the
+    beauty and wellness industry. Rather than relying on traditional photoshoots, I used
+    generative AI to create natural-looking models, premium studio imagery, and a cohesive
+    visual identity that feels calm, modern, and luxurious. While the project is primarily
+    focused on branding and marketing, I also applied UX thinking to shape how customers
+    discover the brand, explore offerings, and move toward booking a class.</p>
+  </section>
+
+  <div class="cs-gallery">
+    <img src="images/case-study-6-billboard.png" alt="Saix Yoga — billboard mockup">
+    <img src="images/case-study-6-screen.png" alt="Saix Yoga — screen mockup">
+  </div>
+
+  <section class="cs-section">
+    <h2>The Opportunity</h2>
+    <p>Many boutique fitness studios look and market themselves in similar ways, making it
+    difficult to stand out in a competitive city like Manhattan. The goal was to create a
+    brand that felt elevated and memorable while still feeling warm, approachable, and
+    authentic. I wanted to show how AI could help produce premium campaign assets faster
+    without sacrificing quality or the overall customer experience.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>Process</h2>
+    <p>Using generative AI, I experimented with different models, facial features, hairstyles,
+    wardrobe, lighting, studio environments, and camera angles to find the right visual
+    direction. Each round of iteration focused on making the imagery feel less artificial and
+    more editorial—similar to what you'd see in a luxury wellness campaign. I also considered
+    how the visuals would translate across social media, landing pages, digital ads, and
+    promotional emails to create a consistent brand experience from the first impression
+    through class booking.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2>Solution</h2>
+    <p>The final creative direction presents Saix Yoga as more than just a fitness studio—it's
+    positioned as a modern wellness destination. The brand combines clean design, calming
+    visuals, premium amenities, and community-focused experiences to create a lifestyle that
+    people want to be part of. Every image and marketing asset was designed to reinforce that
+    feeling across multiple digital channels.</p>
+    <div class="cs-video-grid">
+      <div class="cs-video-wrap">
+        <iframe src="https://www.youtube.com/embed/aNECb3jufGU" title="Siax Yoga campaign video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <div class="cs-video-wrap">
+        <iframe src="https://www.youtube.com/embed/5WS3Gyp5dt8" title="Siax Yoga campaign video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <h2>Business Impact (Concept)</h2>
+    <p>Although this is a conceptual project, the success metrics reflect realistic business
+    outcomes that a campaign like this would aim to achieve.</p>
+    <div class="cs-impact-stats">
+      <div>37%<span>Increase in landing page engagement through stronger visual storytelling and a more cohesive luxury brand identity</span></div>
+      <div>29%<span>Increase in class booking conversions by simplifying messaging and creating a clearer path from advertisement to booking</span></div>
+      <div>41%<span>Increase in social media engagement using AI-generated editorial imagery that encourages users to stop, explore, and share</span></div>
+      <div>34%<span>Reduction in creative production costs by replacing repeated photoshoots with AI-assisted content creation</span></div>
+      <div>68%<span>Faster campaign production, making it easier to test new creative ideas, launch seasonal promotions, and keep marketing content fresh</span></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <h2>Outcome</h2>
+    <p>This project showcases how AI can be used as a creative partner to build compelling
+    marketing campaigns for beauty and wellness brands. It highlights my ability to combine
+    visual storytelling, branding, AI image generation, and UX thinking to create experiences
+    that not only look beautiful but also support meaningful business and marketing goals.</p>
+  </section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <p>Interested in working together?</p>
+  <a class="contact-link" href="https://www.linkedin.com/in/jennjchen" target="_blank" rel="noopener">Let's connect on LinkedIn →</a>
+  <p class="copyright">&copy; 2026 Jennifer Chen</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
