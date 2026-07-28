@@ -294,11 +294,11 @@ a { color: inherit; }
   filter: brightness(0.7);
 }
 
-.project-card--image.project-card--dim .project-card-thumb {
+:root[data-theme="dark"] .project-card--image.project-card--dim .project-card-thumb {
   filter: brightness(0.7);
 }
 
-.project-card--image.project-card--dim:hover .project-card-thumb {
+:root[data-theme="dark"] .project-card--image.project-card--dim:hover .project-card-thumb {
   filter: brightness(1);
 }
 
