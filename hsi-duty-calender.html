@@ -35,10 +35,13 @@
     width: 100%; display: block; border-radius: 12px; margin: 8px 0 20px;
   }
   .cs-photo-stack {
-    display: flex; flex-direction: column; gap: 10px;
+    display: flex; flex-direction: column; gap: 20px;
   }
   .cs-photo-stack .cs-section-image {
     margin: 0;
+  }
+  .cs-photo-stack--triple img:nth-child(3) {
+    margin-top: -30px;
   }
   .cs-section-images {
     display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start;
@@ -182,7 +185,7 @@
     </ul>
     <p>By improving data visibility and connecting field agents with decision-makers, RAVEN
     plays a pivotal role in modern law enforcement and counterterrorism operations.</p>
-    <div class="cs-photo-stack">
+    <div class="cs-photo-stack cs-photo-stack--triple">
       <img src="images/case-study-2-f.webp" alt="RAVEN — file upload and submission modals" class="cs-section-image">
       <img src="images/case-study-2-g.webp" alt="RAVEN — shift swap request and personnel profile cards" class="cs-section-image">
       <img src="images/case-study-2-h.webp" alt="RAVEN — design system component library documentation" class="cs-section-image">
