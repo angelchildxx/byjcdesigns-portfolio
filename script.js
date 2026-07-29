@@ -31,9 +31,54 @@ function initThemeToggle() {
   });
 }
 
+// ---------- Photo carousels ----------
+function initCarousels() {
+  document.querySelectorAll('.cs-carousel').forEach((carousel) => {
+    const track = carousel.querySelector('.cs-carousel-track');
+    const prevBtn = carousel.querySelector('.cs-carousel-arrow--prev');
+    const nextBtn = carousel.querySelector('.cs-carousel-arrow--next');
+    if (!track || !prevBtn || !nextBtn) return;
+
+    const scrollByAmount = () => {
+      const item = track.querySelector('.cs-carousel-item');
+      const gap = parseFloat(getComputedStyle(track).gap) || 0;
+      return item ? item.getBoundingClientRect().width + gap : track.clientWidth;
+    };
+
+    const updateArrowState = () => {
+      const maxScroll = track.scrollWidth - track.clientWidth - 1;
+      prevBtn.disabled = track.scrollLeft <= 0;
+      nextBtn.disabled = track.scrollLeft >= maxScroll;
+    };
+
+    prevBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -scrollByAmount(), behavior: 'smooth' });
+    });
+    nextBtn.addEventListener('click', () => {
+      track.scrollBy({ left: scrollByAmount(), behavior: 'smooth' });
+    });
+
+    // Arrow-key navigation when the track itself is focused
+    track.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        track.scrollBy({ left: scrollByAmount(), behavior: 'smooth' });
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        track.scrollBy({ left: -scrollByAmount(), behavior: 'smooth' });
+      }
+    });
+
+    track.addEventListener('scroll', updateArrowState);
+    window.addEventListener('resize', updateArrowState);
+    updateArrowState();
+  });
+}
+
 // Scroll-reveal: fade/slide in elements as they enter the viewport
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
+  initCarousels();
 
   const revealEls = document.querySelectorAll('.reveal');
 

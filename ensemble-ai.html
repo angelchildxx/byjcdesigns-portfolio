@@ -43,15 +43,59 @@
     .cs-hero-row { flex-direction: column; }
     .cs-hero-row img { width: 100%; }
   }
-  .cs-gallery {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
-    padding: 32px var(--side-pad) 0; margin: 0;
+  .cs-carousel {
+    position: relative;
+    max-width: 100%;
+    padding: 32px var(--side-pad) 0;
+    margin: 0;
   }
-  .cs-gallery img {
-    width: 100%; display: block; border-radius: 12px;
+  .cs-carousel-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 4px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
+  .cs-carousel-track::-webkit-scrollbar { display: none; }
+  .cs-carousel-item {
+    flex: 0 0 auto;
+    width: min(70%, 420px);
+    scroll-snap-align: center;
+    border-radius: 12px;
+    display: block;
+    object-fit: cover;
+  }
+  .cs-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transition: border-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+  }
+  .cs-carousel-arrow:hover { border-color: var(--accent); color: var(--accent); }
+  .cs-carousel-arrow:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .cs-carousel-arrow[disabled] { opacity: 0.3; cursor: default; }
+  .cs-carousel-arrow--prev { left: 4px; }
+  .cs-carousel-arrow--next { right: 4px; }
   @media (max-width: 640px) {
-    .cs-gallery { grid-template-columns: 1fr; }
+    .cs-carousel-item { width: min(82%, 340px); }
+    .cs-carousel-arrow { width: 38px; height: 38px; font-size: 17px; }
   }
   .cs-section { max-width: 100%; margin: 0; padding: 56px var(--side-pad); border-top: none; }
   .cs-section h2 { font-family: var(--serif); font-weight: 700; font-size: 20px; color: var(--ink); margin: 0 0 16px; }
@@ -106,13 +150,17 @@
     </div>
   </section>
 
-  <div class="cs-gallery">
-    <img src="images/case-study-5-e1.png" alt="Ensemble.ai — design detail 1">
-    <img src="images/case-study-5-e2.png" alt="Ensemble.ai — design detail 2">
-    <img src="images/case-study-5-e3.png" alt="Ensemble.ai — design detail 3">
-    <img src="images/case-study-5-e4.png" alt="Ensemble.ai — design detail 4">
-    <img src="images/case-study-5-e5.png" alt="Ensemble.ai — design detail 5">
-    <img src="images/case-study-5-e6.png" alt="Ensemble.ai — design detail 6">
+  <div class="cs-carousel">
+    <button class="cs-carousel-arrow cs-carousel-arrow--prev" type="button" aria-label="Previous image">‹</button>
+    <div class="cs-carousel-track" role="region" aria-label="Ensemble.ai design gallery" tabindex="0">
+      <img src="images/case-study-5-e1.png" alt="Ensemble.ai — design detail 1" class="cs-carousel-item">
+      <img src="images/case-study-5-e2.png" alt="Ensemble.ai — design detail 2" class="cs-carousel-item">
+      <img src="images/case-study-5-e3.png" alt="Ensemble.ai — design detail 3" class="cs-carousel-item">
+      <img src="images/case-study-5-e4.png" alt="Ensemble.ai — design detail 4" class="cs-carousel-item">
+      <img src="images/case-study-5-e5.png" alt="Ensemble.ai — design detail 5" class="cs-carousel-item">
+      <img src="images/case-study-5-e6.png" alt="Ensemble.ai — design detail 6" class="cs-carousel-item">
+    </div>
+    <button class="cs-carousel-arrow cs-carousel-arrow--next" type="button" aria-label="Next image">›</button>
   </div>
 
   <section class="cs-section">
