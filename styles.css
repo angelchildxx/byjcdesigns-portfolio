@@ -63,20 +63,25 @@ a { color: inherit; }
 
 /* ---------- Dark mode toggle ---------- */
 .theme-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
-  margin-left: 24px;
+  width: 48px;
+  height: 48px;
+  margin-left: 0;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: transparent;
+  background: var(--bg);
   color: var(--ink);
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1;
   cursor: pointer;
-  transition: border-color 0.3s ease, color 0.3s ease, transform 0.4s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: border-color 0.3s ease, color 0.3s ease, transform 0.4s ease, background-color 0.4s ease;
 }
 
 .theme-toggle:hover {
