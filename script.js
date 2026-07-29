@@ -72,6 +72,41 @@ function initCarousels() {
     track.addEventListener('scroll', updateArrowState);
     window.addEventListener('resize', updateArrowState);
     updateArrowState();
+
+    // Click-and-drag scrolling (mouse) — touch already scrolls natively
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragStartScroll = 0;
+    let moved = false;
+
+    track.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      moved = false;
+      dragStartX = e.pageX;
+      dragStartScroll = track.scrollLeft;
+      track.classList.add('is-dragging');
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const delta = e.pageX - dragStartX;
+      if (Math.abs(delta) > 3) moved = true;
+      track.scrollLeft = dragStartScroll - delta;
+    });
+
+    const endDrag = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      track.classList.remove('is-dragging');
+    };
+    window.addEventListener('mouseup', endDrag);
+    track.addEventListener('mouseleave', endDrag);
+
+    // Prevent the drag from also triggering an image click/link
+    track.addEventListener('click', (e) => {
+      if (moved) e.preventDefault();
+    }, true);
   });
 }
 

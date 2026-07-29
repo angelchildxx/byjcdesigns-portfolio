@@ -58,15 +58,23 @@
     padding-bottom: 4px;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    cursor: grab;
   }
   .cs-carousel-track::-webkit-scrollbar { display: none; }
+  .cs-carousel-track.is-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
   .cs-carousel-item {
     flex: 0 0 auto;
-    width: min(70%, 420px);
+    width: min(88%, 620px);
     scroll-snap-align: center;
     border-radius: 12px;
     display: block;
     object-fit: cover;
+    -webkit-user-drag: none;
+    user-select: none;
   }
   .cs-carousel-arrow {
     position: absolute;
@@ -94,7 +102,7 @@
   .cs-carousel-arrow--prev { left: 4px; }
   .cs-carousel-arrow--next { right: 4px; }
   @media (max-width: 640px) {
-    .cs-carousel-item { width: min(82%, 340px); }
+    .cs-carousel-item { width: min(92%, 400px); }
     .cs-carousel-arrow { width: 38px; height: 38px; font-size: 17px; }
   }
   .cs-section { max-width: 100%; margin: 0; padding: 56px var(--side-pad); border-top: none; }
