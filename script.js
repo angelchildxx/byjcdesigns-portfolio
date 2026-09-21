@@ -110,10 +110,42 @@ function initCarousels() {
   });
 }
 
+// ---------- Clean section links (scroll to #work/#contact without leaving the hash in the URL) ----------
+function initCleanAnchors() {
+  const sectionLinks = document.querySelectorAll(
+    'a[href="#work"], a[href="#contact"], a[href="/#work"], a[href="/#contact"]'
+  );
+  sectionLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('href').endsWith('work') ? 'work' : 'contact';
+      const target = document.getElementById(targetId);
+      if (target) {
+        // Section already lives on this page - scroll to it and keep the URL bare
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+        history.replaceState(null, '', window.location.pathname);
+      }
+      // Otherwise let the browser navigate normally (section lives on the homepage)
+    });
+  });
+
+  // Arrived here via a #work/#contact link from another page - scroll, then strip the hash
+  if (window.location.hash === '#work' || window.location.hash === '#contact') {
+    const target = document.getElementById(window.location.hash.slice(1));
+    if (target) {
+      requestAnimationFrame(() => {
+        target.scrollIntoView({ behavior: 'auto' });
+        history.replaceState(null, '', window.location.pathname);
+      });
+    }
+  }
+}
+
 // Scroll-reveal: fade/slide in elements as they enter the viewport
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initCarousels();
+  initCleanAnchors();
 
   const revealEls = document.querySelectorAll('.reveal');
 
